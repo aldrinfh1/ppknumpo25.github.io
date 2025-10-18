@@ -42,7 +42,7 @@
             <h2>${task.title}</h2>
             ${descriptionHTML}
             <div class="countdown-wrapper">
-                <div class="countdown" id="countdown-${index}">
+                <div class="countdown" id="countdown-kam-${index}">
                     <div class="time-box" id="hari">
                         <div class="number" data-unit="days">0</div>
                         <div class="label">Hari</div>
@@ -87,7 +87,7 @@
                 const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
                 const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-                const countdownEl = document.getElementById(`countdown-${index}`);
+                const countdownEl = document.getElementById(`countdown-kam-${index}`);
                 countdownEl.querySelector('[data-unit="days"]').innerText = days;
                 countdownEl.querySelector('[data-unit="hours"]').innerText = hours;
                 countdownEl.querySelector('[data-unit="minutes"]').innerText = minutes;

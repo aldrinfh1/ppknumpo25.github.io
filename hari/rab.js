@@ -47,7 +47,7 @@
             <h2>${task.title}</h2>
             ${descriptionHTML}
             <div class="countdown-wrapper">
-                <div class="countdown" id="countdown-${index}">
+                <div class="countdown" id="countdown-rab-${index}">
                     <div class="time-box" id="hari">
                         <div class="number" data-unit="days">0</div>
                         <div class="label">Hari</div>
@@ -79,20 +79,21 @@
             const distance = countDownDate - now;
 
             const card = document.getElementById(`task-${index}`);
-            const countdownWrapper = card.querySelector('.countdown-wrapper');
+            const countdownWrapper = card.querySelector('.countdown-wrapper-rab');
 
             if (distance < 0) {
                 // Jika waktu sudah habis
                 countdownWrapper.innerHTML = `<div class="message overdue-msg">Tugas Selasai!</div>`;
                 card.classList.add('overdue');
-            } else {
+            } 
+            else {
                 // Jika masih ada waktu
                 const days = Math.floor(distance / (1000 * 60 * 60 * 24));
                 const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                 const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
                 const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-                const countdownEl = document.getElementById(`countdown-${index}`);
+                const countdownEl = document.getElementById(`countdown-rab-${index}`);
                 countdownEl.querySelector('[data-unit="days"]').innerText = days;
                 countdownEl.querySelector('[data-unit="hours"]').innerText = hours;
                 countdownEl.querySelector('[data-unit="minutes"]').innerText = minutes;
